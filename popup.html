@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fusion Browse Assistant</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup">
+    <!-- Header -->
+    <header class="popup-header">
+      <div class="popup-logo">
+        <img src="images/fusionai.png" alt="Fusion" class="popup-logo-img">
+      </div>
+      <div class="popup-brand">
+        <h1 class="popup-title">Fusion Assistant</h1>
+        <p class="popup-subtitle" id="popup-subtitle">Contextual AI Assistant</p>
+      </div>
+  </header>
+
+    <!-- Status -->
+    <div class="popup-status" id="popup-status">
+      <span class="popup-status-dot"></span>
+      <span class="popup-status-text">Checking...</span>
+    </div>
+
+    <!-- Actions -->
+    <div class="popup-actions">
+      <button class="popup-btn popup-btn-primary" id="open-panel-btn">
+        <span class="popup-btn-icon">💬</span>
+        <span class="popup-btn-text" id="open-panel-text">Open assistant</span>
+      </button>
+
+      <div class="popup-quick-actions">
+        <button class="popup-quick-btn" id="quick-summary" title="Quick summary">
+          📝
+        </button>
+        <button class="popup-quick-btn" id="quick-simplify" title="Simplify">
+          🎓
+        </button>
+        <button class="popup-quick-btn" id="quick-critique" title="Critical analysis">
+          🔍
+        </button>
+        <button class="popup-quick-btn" id="open-settings" title="Settings">
+          ⚙️
+        </button>
+      </div>
+    </div>
+
+    <!-- Config Section (hidden by default) -->
+    <div class="popup-config hidden" id="popup-config">
+      <div class="popup-config-header">
+        <span id="config-title">API Configuration</span>
+        <button class="popup-config-close" id="close-config">✕</button>
+      </div>
+      <div class="popup-field">
+        <label class="popup-field-label" id="api-key-label">Mistral API Key</label>
+        <div class="popup-field-row">
+          <input type="password" class="popup-input" id="api-key-input" placeholder="sk-...">
+          <button class="popup-btn-icon-only" id="toggle-key">👁️</button>
+        </div>
+      </div>
+      <div class="popup-config-actions">
+        <button class="popup-btn popup-btn-primary popup-btn-sm" id="save-key">
+          Save
+        </button>
+        <button class="popup-btn popup-btn-sm" id="test-key">
+          Test
+        </button>
+      </div>
+      <div class="popup-config-message" id="config-message"></div>
+      <a href="https://console.mistral.ai/api-keys/" target="_blank" class="popup-help-link" id="help-link">
+        🔑 Where to find my API key?
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="popup-footer">
+      <span id="popup-footer-text">Fusion Browse Assistant v1.0.0</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

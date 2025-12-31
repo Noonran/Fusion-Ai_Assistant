@@ -1,0 +1,383 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   FUSION BROWSE ASSISTANT - Popup Styles
+   Palette inspirée du logo pixel art Mistral
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --mist-bg-deep: #1a1a1a;
+  --mist-bg-panel: #212121;
+  --mist-bg-elevated: #2a2a2a;
+  --mist-bg-input: #333333;
+  --mist-border: rgba(255, 255, 255, 0.08);
+  --mist-border-focus: rgba(255, 217, 61, 0.5);
+  --mist-text: #f5f5f5;
+  --mist-text-muted: #9a9a9a;
+  --mist-text-dim: #666666;
+  /* Couleurs du logo Mistral */
+  --mist-yellow: #FFD93D;
+  --mist-orange-light: #FFA41B;
+  --mist-orange: #FF6B35;
+  --mist-orange-dark: #FF4500;
+  --mist-red: #E62E2E;
+  /* Gradients */
+  --mist-accent-gradient: linear-gradient(180deg, #FFD93D 0%, #FFA41B 25%, #FF6B35 50%, #FF4500 75%, #E62E2E 100%);
+  --mist-accent-gradient-horizontal: linear-gradient(90deg, #FFD93D 0%, #FF6B35 50%, #E62E2E 100%);
+  --mist-accent-gradient-soft: linear-gradient(135deg, #FFD93D 0%, #FF6B35 100%);
+  --mist-success: #22c55e;
+  --mist-error: #E62E2E;
+  --mist-warning: #FFA41B;
+  --mist-radius-sm: 8px;
+  --mist-radius-md: 12px;
+  --mist-radius-lg: 16px;
+  --mist-shadow-glow: 0 0 20px rgba(255, 165, 27, 0.25);
+  --mist-shadow-glow-yellow: 0 0 25px rgba(255, 217, 61, 0.3);
+  --mist-transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 320px;
+  background: var(--mist-bg-deep);
+  color: var(--mist-text);
+  font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.popup {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.popup-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.popup-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--mist-radius-md);
+  background: var(--mist-bg-elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--mist-shadow-glow);
+  animation: glow-pulse 3s ease-in-out infinite;
+  overflow: hidden;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 165, 27, 0.2); }
+  50% { box-shadow: 0 0 30px rgba(255, 217, 61, 0.35); }
+}
+
+.popup-logo-img {
+  width: 48px;
+  height: 48px;
+  image-rendering: auto;
+  object-fit: contain;
+}
+
+.popup-brand {
+  flex: 1;
+}
+
+.popup-title {
+  font-size: 16px;
+  font-weight: 700;
+  background: var(--mist-accent-gradient-horizontal);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.popup-subtitle {
+  font-size: 12px;
+  color: var(--mist-text-muted);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   STATUS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.popup-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: var(--mist-radius-md);
+  background: var(--mist-bg-panel);
+  border: 1px solid var(--mist-border);
+}
+
+.popup-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--mist-orange-light);
+  transition: background var(--mist-transition);
+}
+
+.popup-status.connected .popup-status-dot {
+  background: var(--mist-success);
+}
+
+.popup-status.error .popup-status-dot {
+  background: var(--mist-red);
+}
+
+.popup-status-text {
+  font-size: 12px;
+  color: var(--mist-text-muted);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ACTIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.popup-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: var(--mist-radius-md);
+  border: 1px solid var(--mist-border);
+  background: var(--mist-bg-elevated);
+  color: var(--mist-text);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--mist-transition);
+}
+
+.popup-btn:hover {
+  background: var(--mist-bg-input);
+  border-color: var(--mist-border-focus);
+  transform: translateY(-1px);
+}
+
+.popup-btn:active {
+  transform: translateY(0);
+}
+
+.popup-btn-primary {
+  background: var(--mist-accent-gradient-soft);
+  border: none;
+  color: var(--mist-bg-deep);
+  font-weight: 600;
+  box-shadow: var(--mist-shadow-glow);
+}
+
+.popup-btn-primary:hover {
+  box-shadow: var(--mist-shadow-glow-yellow);
+}
+
+.popup-btn-sm {
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.popup-btn-icon {
+  font-size: 16px;
+}
+
+.popup-quick-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.popup-quick-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: var(--mist-radius-md);
+  border: 1px solid var(--mist-border);
+  background: var(--mist-bg-panel);
+  font-size: 18px;
+  cursor: pointer;
+  transition: all var(--mist-transition);
+}
+
+.popup-quick-btn:hover {
+  background: var(--mist-bg-elevated);
+  border-color: var(--mist-border-focus);
+  transform: translateY(-2px);
+}
+
+.popup-quick-btn:active {
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   CONFIG SECTION
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.popup-config {
+  padding: 14px;
+  border-radius: var(--mist-radius-md);
+  background: var(--mist-bg-panel);
+  border: 1px solid var(--mist-border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: fade-in 0.2s ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.popup-config.hidden {
+  display: none;
+}
+
+.popup-config-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--mist-text);
+}
+
+.popup-config-close {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--mist-radius-sm);
+  border: none;
+  background: var(--mist-bg-elevated);
+  color: var(--mist-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  transition: all var(--mist-transition);
+}
+
+.popup-config-close:hover {
+  background: var(--mist-bg-input);
+  color: var(--mist-text);
+}
+
+.popup-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.popup-field-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--mist-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.popup-field-row {
+  display: flex;
+  gap: 8px;
+}
+
+.popup-input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: var(--mist-radius-sm);
+  border: 1px solid var(--mist-border);
+  background: var(--mist-bg-input);
+  color: var(--mist-text);
+  font-size: 13px;
+  outline: none;
+  transition: all var(--mist-transition);
+}
+
+.popup-input::placeholder {
+  color: var(--mist-text-dim);
+}
+
+.popup-input:focus {
+  border-color: var(--mist-border-focus);
+  box-shadow: 0 0 0 3px rgba(255, 217, 61, 0.15);
+}
+
+.popup-btn-icon-only {
+  width: 40px;
+  padding: 0;
+  border-radius: var(--mist-radius-sm);
+  border: 1px solid var(--mist-border);
+  background: var(--mist-bg-elevated);
+  color: var(--mist-text-muted);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all var(--mist-transition);
+}
+
+.popup-btn-icon-only:hover {
+  background: var(--mist-bg-input);
+  border-color: var(--mist-border-focus);
+}
+
+.popup-config-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.popup-config-message {
+  font-size: 12px;
+  min-height: 16px;
+  transition: all var(--mist-transition);
+}
+
+.popup-config-message.success {
+  color: var(--mist-success);
+}
+
+.popup-config-message.error {
+  color: var(--mist-red);
+}
+
+.popup-help-link {
+  font-size: 12px;
+  color: var(--mist-orange-light);
+  text-decoration: none;
+  transition: color var(--mist-transition);
+}
+
+.popup-help-link:hover {
+  color: var(--mist-yellow);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.popup-footer {
+  padding-top: 12px;
+  border-top: 1px solid var(--mist-border);
+  text-align: center;
+  font-size: 11px;
+  color: var(--mist-text-dim);
+}
