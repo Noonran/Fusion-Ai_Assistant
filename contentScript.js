@@ -64,7 +64,7 @@ function extractYouTubeInfo() {
 
   const videoId = getYouTubeVideoId();
   if (!videoId) {
-    return { error: "no_video_id", message: "Impossible de trouver l'ID de la vidéo" };
+    return { error: "no_video_id", message: t("error.noVideoId") };
   }
 
   // Extraire le titre
@@ -447,7 +447,74 @@ const TRANSLATIONS = {
     // Errors
     "error.noKey": "Configure ta clé Mistral pour activer cette fonctionnalité.",
     "error.api": "Erreur lors de l'appel API.",
-    "error.generic": "Une erreur est survenue."
+    "error.generic": "Une erreur est survenue.",
+    
+    // Chat messages
+    "chat.noResponse": "Pas de réponse.",
+    "chat.analyzing": "Analyse en cours...",
+    "chat.copy": "Copier",
+    "chat.regenerate": "Régénérer",
+    "chat.copied": "Copié !",
+    "chat.extracting": "Extraction des informations...",
+    "chat.searching": "Recherche d'informations complémentaires en cours...",
+    "chat.comparing": "Comparaison en cours...",
+    "chat.extractingData": "Extraction des données en cours...",
+    "chat.highlightingIdeas": "Identification des idées clés, arguments et chiffres importants...",
+    "chat.pageAgentWorking": "Analyse de la page et du comportement en cours...",
+    "chat.extractingContent": "Extraction du contenu en cours...",
+    "chat.testingKey": "Test de la clé en cours...",
+    "chat.verifying": "Vérification...",
+    "chat.saveAndTest": "Enregistrer et tester",
+    "chat.keyValidRedirect": "Clé valide ! Redirection...",
+    "chat.keyInvalidCheck": "Clé invalide. Vérifiez-la.",
+    "chat.error": "Erreur",
+    "integration.addCurrentPage": "Ajouter cette page",
+    "integration.contentAvailable": "Contenu disponible",
+    "integration.openDocToAnalyze": "Ouvrir le document pour analyser",
+    "integration.openDocAndRetry": "Ouvre le document dans un onglet puis réessaie",
+    "ui.changeLanguage": "Changer la langue",
+    "ui.settings": "Paramètres",
+    "ui.checkUpdates": "Vérifier les mises à jour",
+    "ui.refreshContent": "Actualiser le contenu",
+    "ui.manageAgents": "Gérer les agents",
+    "ui.refreshDocContent": "Rafraîchir le contenu",
+    "ui.close": "Fermer",
+    "ui.send": "Envoyer",
+    "ui.add": "Ajouter",
+    "ui.open": "Ouvrir",
+    "ui.delete": "Supprimer",
+    "ui.apiStatus": "Statut API",
+    "error.noVideoId": "Impossible de trouver l'ID de la vidéo",
+    "error.noResponse": "Pas de réponse.",
+    "error.tooManyRequests": "Trop de requêtes. Attendez un moment.",
+    "error.connectionError": "Erreur de connexion",
+    "error.apiError": "Erreur lors de l'appel API",
+    "chat.preparingComparison": "Préparation de la comparaison...",
+    "chat.retrievingTabs": "Récupération des onglets ouverts...",
+    "onboarding.findKey": "Où trouver ma clé ?",
+    "model.recommended": "Recommandé",
+    "agents.add": "+ Ajouter",
+    "actionLabel.summary": "📝 Résumé de la page",
+    "actionLabel.detailed": "📚 Résumé détaillé",
+    "actionLabel.simplify": "🎓 Vulgarisation",
+    "actionLabel.translate": "🌍 Traduction",
+    "actionLabel.critique": "🔍 Analyse complète",
+    "actionLabel.plan": "📋 Plan de contenu",
+    "actionLabel.pageAgent": "🤖 Agent de Page",
+    "actionLabel.highlightKeyIdeas": "🖍️ Idées clés identifiées",
+    "actionLabel.extractData": "📦 Données extraites",
+    "actionLabel.comparePages": "⚖️ Comparaison de pages",
+    "actionLabel.rewriteScientific": "🔬 Réécriture scientifique",
+    "actionLabel.rewriteJournalistic": "📰 Réécriture journalistique",
+    "actionLabel.rewriteMarketing": "🎯 Réécriture marketing",
+    "actionLabel.rewriteUXCopy": "💻 Réécriture UX",
+    "actionLabel.rewriteTwitterThread": "🐦 Thread Twitter",
+    "actionLabel.rewriteLinkedIn": "💼 Post LinkedIn",
+    "actionLabel.generateArticlePlan": "📝 Plan d'article",
+    "actionLabel.generateYouTubePlan": "🎬 Plan YouTube",
+    "actionLabel.generateEmailSequence": "📧 Séquence email",
+    "actionLabel.generateTutorial": "📖 Tutoriel structuré",
+    "actionLabel.generateContactEmail": "✉️ Prise de contact"
   },
   
   en: {
@@ -632,7 +699,74 @@ const TRANSLATIONS = {
     // Errors
     "error.noKey": "Configure your Mistral key to enable this feature.",
     "error.api": "Error during API call.",
-    "error.generic": "An error occurred."
+    "error.generic": "An error occurred.",
+    
+    // Chat messages
+    "chat.noResponse": "No response.",
+    "chat.analyzing": "Analyzing...",
+    "chat.copy": "Copy",
+    "chat.regenerate": "Regenerate",
+    "chat.copied": "Copied!",
+    "chat.extracting": "Extracting information...",
+    "chat.searching": "Searching for additional information...",
+    "chat.comparing": "Comparing...",
+    "chat.extractingData": "Extracting data...",
+    "chat.highlightingIdeas": "Identifying key ideas, arguments and important figures...",
+    "chat.pageAgentWorking": "Analyzing page and behavior...",
+    "chat.extractingContent": "Extracting content...",
+    "chat.testingKey": "Testing key...",
+    "chat.verifying": "Verifying...",
+    "chat.saveAndTest": "Save and test",
+    "chat.keyValidRedirect": "Valid key! Redirecting...",
+    "chat.keyInvalidCheck": "Invalid key. Please check it.",
+    "chat.error": "Error",
+    "integration.addCurrentPage": "Add this page",
+    "integration.contentAvailable": "Content available",
+    "integration.openDocToAnalyze": "Open document to analyze",
+    "integration.openDocAndRetry": "Open the document in a tab and try again",
+    "ui.changeLanguage": "Change language",
+    "ui.settings": "Settings",
+    "ui.checkUpdates": "Check for updates",
+    "ui.refreshContent": "Refresh content",
+    "ui.manageAgents": "Manage agents",
+    "ui.refreshDocContent": "Refresh content",
+    "ui.close": "Close",
+    "ui.send": "Send",
+    "ui.add": "Add",
+    "ui.open": "Open",
+    "ui.delete": "Delete",
+    "ui.apiStatus": "API Status",
+    "error.noVideoId": "Unable to find video ID",
+    "error.noResponse": "No response.",
+    "error.tooManyRequests": "Too many requests. Please wait.",
+    "error.connectionError": "Connection error",
+    "error.apiError": "API call error",
+    "chat.preparingComparison": "Preparing comparison...",
+    "chat.retrievingTabs": "Retrieving open tabs...",
+    "onboarding.findKey": "Where to find my key?",
+    "model.recommended": "Recommended",
+    "agents.add": "+ Add",
+    "actionLabel.summary": "📝 Page Summary",
+    "actionLabel.detailed": "📚 Detailed Summary",
+    "actionLabel.simplify": "🎓 Simplification",
+    "actionLabel.translate": "🌍 Translation",
+    "actionLabel.critique": "🔍 Full Analysis",
+    "actionLabel.plan": "📋 Content Plan",
+    "actionLabel.pageAgent": "🤖 Page Agent",
+    "actionLabel.highlightKeyIdeas": "🖍️ Key Ideas Identified",
+    "actionLabel.extractData": "📦 Data Extracted",
+    "actionLabel.comparePages": "⚖️ Page Comparison",
+    "actionLabel.rewriteScientific": "🔬 Scientific Rewrite",
+    "actionLabel.rewriteJournalistic": "📰 Journalistic Rewrite",
+    "actionLabel.rewriteMarketing": "🎯 Marketing Rewrite",
+    "actionLabel.rewriteUXCopy": "💻 UX Copy Rewrite",
+    "actionLabel.rewriteTwitterThread": "🐦 Twitter Thread",
+    "actionLabel.rewriteLinkedIn": "💼 LinkedIn Post",
+    "actionLabel.generateArticlePlan": "📝 Article Plan",
+    "actionLabel.generateYouTubePlan": "🎬 YouTube Plan",
+    "actionLabel.generateEmailSequence": "📧 Email Sequence",
+    "actionLabel.generateTutorial": "📖 Structured Tutorial",
+    "actionLabel.generateContactEmail": "✉️ Contact Request"
   },
   
   de: {
@@ -817,7 +951,74 @@ const TRANSLATIONS = {
     // Errors
     "error.noKey": "Konfiguriere deinen Mistral-Schlüssel, um diese Funktion zu aktivieren.",
     "error.api": "Fehler beim API-Aufruf.",
-    "error.generic": "Ein Fehler ist aufgetreten."
+    "error.generic": "Ein Fehler ist aufgetreten.",
+    
+    // Chat messages
+    "chat.noResponse": "Keine Antwort.",
+    "chat.analyzing": "Analyse läuft...",
+    "chat.copy": "Kopieren",
+    "chat.regenerate": "Neu generieren",
+    "chat.copied": "Kopiert!",
+    "chat.extracting": "Informationen werden extrahiert...",
+    "chat.searching": "Suche nach zusätzlichen Informationen...",
+    "chat.comparing": "Vergleich läuft...",
+    "chat.extractingData": "Daten werden extrahiert...",
+    "chat.highlightingIdeas": "Identifizierung von Schlüsselideen, Argumenten und wichtigen Zahlen...",
+    "chat.pageAgentWorking": "Analyse der Seite und des Verhaltens...",
+    "chat.extractingContent": "Inhalt wird extrahiert...",
+    "chat.testingKey": "Schlüssel wird getestet...",
+    "chat.verifying": "Überprüfung...",
+    "chat.saveAndTest": "Speichern und testen",
+    "chat.keyValidRedirect": "Gültiger Schlüssel! Weiterleitung...",
+    "chat.keyInvalidCheck": "Ungültiger Schlüssel. Bitte überprüfen.",
+    "chat.error": "Fehler",
+    "integration.addCurrentPage": "Diese Seite hinzufügen",
+    "integration.contentAvailable": "Inhalt verfügbar",
+    "integration.openDocToAnalyze": "Dokument öffnen zur Analyse",
+    "integration.openDocAndRetry": "Öffne das Dokument in einem Tab und versuche es erneut",
+    "ui.changeLanguage": "Sprache ändern",
+    "ui.settings": "Einstellungen",
+    "ui.checkUpdates": "Nach Updates suchen",
+    "ui.refreshContent": "Inhalt aktualisieren",
+    "ui.manageAgents": "Agenten verwalten",
+    "ui.refreshDocContent": "Inhalt aktualisieren",
+    "ui.close": "Schließen",
+    "ui.send": "Senden",
+    "ui.add": "Hinzufügen",
+    "ui.open": "Öffnen",
+    "ui.delete": "Löschen",
+    "ui.apiStatus": "API-Status",
+    "error.noVideoId": "Video-ID nicht gefunden",
+    "error.noResponse": "Keine Antwort.",
+    "error.tooManyRequests": "Zu viele Anfragen. Bitte warten.",
+    "error.connectionError": "Verbindungsfehler",
+    "error.apiError": "API-Aufruffehler",
+    "chat.preparingComparison": "Vergleich wird vorbereitet...",
+    "chat.retrievingTabs": "Offene Tabs werden abgerufen...",
+    "onboarding.findKey": "Wo finde ich meinen Schlüssel?",
+    "model.recommended": "Empfohlen",
+    "agents.add": "+ Hinzufügen",
+    "actionLabel.summary": "📝 Seitenzusammenfassung",
+    "actionLabel.detailed": "📚 Detaillierte Zusammenfassung",
+    "actionLabel.simplify": "🎓 Vereinfachung",
+    "actionLabel.translate": "🌍 Übersetzung",
+    "actionLabel.critique": "🔍 Vollständige Analyse",
+    "actionLabel.plan": "📋 Inhaltsplan",
+    "actionLabel.pageAgent": "🤖 Seiten-Agent",
+    "actionLabel.highlightKeyIdeas": "🖍️ Schlüsselideen identifiziert",
+    "actionLabel.extractData": "📦 Daten extrahiert",
+    "actionLabel.comparePages": "⚖️ Seitenvergleich",
+    "actionLabel.rewriteScientific": "🔬 Wissenschaftliches Umschreiben",
+    "actionLabel.rewriteJournalistic": "📰 Journalistisches Umschreiben",
+    "actionLabel.rewriteMarketing": "🎯 Marketing Umschreiben",
+    "actionLabel.rewriteUXCopy": "💻 UX-Text Umschreiben",
+    "actionLabel.rewriteTwitterThread": "🐦 Twitter-Thread",
+    "actionLabel.rewriteLinkedIn": "💼 LinkedIn-Beitrag",
+    "actionLabel.generateArticlePlan": "📝 Artikelplan",
+    "actionLabel.generateYouTubePlan": "🎬 YouTube-Plan",
+    "actionLabel.generateEmailSequence": "📧 E-Mail-Sequenz",
+    "actionLabel.generateTutorial": "📖 Strukturiertes Tutorial",
+    "actionLabel.generateContactEmail": "✉️ Kontaktanfrage"
   },
   
   es: {
@@ -1002,7 +1203,74 @@ const TRANSLATIONS = {
     // Errors
     "error.noKey": "Configura tu clave Mistral para activar esta función.",
     "error.api": "Error durante la llamada API.",
-    "error.generic": "Ha ocurrido un error."
+    "error.generic": "Ha ocurrido un error.",
+    
+    // Chat messages
+    "chat.noResponse": "Sin respuesta.",
+    "chat.analyzing": "Analizando...",
+    "chat.copy": "Copiar",
+    "chat.regenerate": "Regenerar",
+    "chat.copied": "¡Copiado!",
+    "chat.extracting": "Extrayendo información...",
+    "chat.searching": "Buscando información adicional...",
+    "chat.comparing": "Comparando...",
+    "chat.extractingData": "Extrayendo datos...",
+    "chat.highlightingIdeas": "Identificando ideas clave, argumentos y cifras importantes...",
+    "chat.pageAgentWorking": "Analizando página y comportamiento...",
+    "chat.extractingContent": "Extrayendo contenido...",
+    "chat.testingKey": "Probando clave...",
+    "chat.verifying": "Verificando...",
+    "chat.saveAndTest": "Guardar y probar",
+    "chat.keyValidRedirect": "¡Clave válida! Redirigiendo...",
+    "chat.keyInvalidCheck": "Clave inválida. Por favor, verifícala.",
+    "chat.error": "Error",
+    "integration.addCurrentPage": "Agregar esta página",
+    "integration.contentAvailable": "Contenido disponible",
+    "integration.openDocToAnalyze": "Abrir documento para analizar",
+    "integration.openDocAndRetry": "Abre el documento en una pestaña e intenta de nuevo",
+    "ui.changeLanguage": "Cambiar idioma",
+    "ui.settings": "Configuración",
+    "ui.checkUpdates": "Buscar actualizaciones",
+    "ui.refreshContent": "Actualizar contenido",
+    "ui.manageAgents": "Gestionar agentes",
+    "ui.refreshDocContent": "Actualizar contenido",
+    "ui.close": "Cerrar",
+    "ui.send": "Enviar",
+    "ui.add": "Añadir",
+    "ui.open": "Abrir",
+    "ui.delete": "Eliminar",
+    "ui.apiStatus": "Estado API",
+    "error.noVideoId": "No se puede encontrar el ID del video",
+    "error.noResponse": "Sin respuesta.",
+    "error.tooManyRequests": "Demasiadas solicitudes. Por favor espere.",
+    "error.connectionError": "Error de conexión",
+    "error.apiError": "Error de llamada API",
+    "chat.preparingComparison": "Preparando comparación...",
+    "chat.retrievingTabs": "Obteniendo pestañas abiertas...",
+    "onboarding.findKey": "¿Dónde encontrar mi clave?",
+    "model.recommended": "Recomendado",
+    "agents.add": "+ Añadir",
+    "actionLabel.summary": "📝 Resumen de la página",
+    "actionLabel.detailed": "📚 Resumen detallado",
+    "actionLabel.simplify": "🎓 Simplificación",
+    "actionLabel.translate": "🌍 Traducción",
+    "actionLabel.critique": "🔍 Análisis completo",
+    "actionLabel.plan": "📋 Plan de contenido",
+    "actionLabel.pageAgent": "🤖 Agente de Página",
+    "actionLabel.highlightKeyIdeas": "🖍️ Ideas clave identificadas",
+    "actionLabel.extractData": "📦 Datos extraídos",
+    "actionLabel.comparePages": "⚖️ Comparación de páginas",
+    "actionLabel.rewriteScientific": "🔬 Reescritura científica",
+    "actionLabel.rewriteJournalistic": "📰 Reescritura periodística",
+    "actionLabel.rewriteMarketing": "🎯 Reescritura de marketing",
+    "actionLabel.rewriteUXCopy": "💻 Reescritura UX",
+    "actionLabel.rewriteTwitterThread": "🐦 Hilo de Twitter",
+    "actionLabel.rewriteLinkedIn": "💼 Post de LinkedIn",
+    "actionLabel.generateArticlePlan": "📝 Plan de artículo",
+    "actionLabel.generateYouTubePlan": "🎬 Plan de YouTube",
+    "actionLabel.generateEmailSequence": "📧 Secuencia de emails",
+    "actionLabel.generateTutorial": "📖 Tutorial estructurado",
+    "actionLabel.generateContactEmail": "✉️ Solicitud de contacto"
   }
 };
 
@@ -4257,7 +4525,7 @@ function buildDock() {
           <label class="mist-field-label" data-i18n="settings.model">🤖 Modèle IA</label>
           <div class="mist-field-row">
             <select class="mist-input mist-input-select" id="mist-model-select">
-              <option value="mistral-large-latest">Mistral Large (Recommandé)</option>
+              <option value="mistral-large-latest" id="mist-model-large">Mistral Large (Recommandé)</option>
               <option value="mistral-medium-latest">Mistral Medium</option>
               <option value="mistral-small-latest">Mistral Small (Rapide)</option>
               <option value="open-mistral-nemo">Mistral Nemo (Open)</option>
@@ -4336,7 +4604,7 @@ function buildDock() {
         </button>
         <div class="mist-onboarding-status" id="mist-onboarding-status"></div>
         <p class="mist-onboarding-help">
-          <a href="https://console.mistral.ai/api-keys/" target="_blank">Où trouver ma clé ?</a>
+          <a href="https://console.mistral.ai/api-keys/" target="_blank" id="mist-onboarding-find-key">Où trouver ma clé ?</a>
         </p>
       </div>
     </div>
@@ -4582,7 +4850,7 @@ function buildDock() {
         <!-- Sélecteur d'agent en haut -->
         <div class="mist-agent-header">
           <select class="mist-select mist-agent-select-inline" id="mist-agent-select">
-            <option value="">Sélectionner un agent...</option>
+            <option value="" id="mist-agent-default-option">Sélectionner un agent...</option>
           </select>
           <button class="mist-icon-btn mist-agent-settings-btn" id="mist-agents-goto-settings" title="Gérer les agents">⚙️</button>
         </div>
@@ -4890,7 +5158,7 @@ function initDockEvents(dock) {
     if (onboardingTitle) onboardingTitle.textContent = t("onboarding.title");
     const onboardingDesc = dock.querySelector(".mist-onboarding-desc");
     if (onboardingDesc) onboardingDesc.textContent = t("onboarding.desc");
-    const onboardingInput = dock.querySelector("#mist-onboarding-input");
+    const onboardingInput = dock.querySelector("#mist-onboarding-key");
     if (onboardingInput) onboardingInput.placeholder = t("onboarding.placeholder");
     const onboardingBtn = dock.querySelector("#mist-onboarding-save");
     if (onboardingBtn) onboardingBtn.textContent = t("onboarding.save");
@@ -5007,9 +5275,38 @@ function initDockEvents(dock) {
     if (integSummarizeBtn) integSummarizeBtn.textContent = t("integration.summarize");
     if (integSuggestBtn) integSuggestBtn.textContent = t("integration.suggest");
     
+    // UI button titles
+    const langBtn = dock.querySelector("#mist-lang-btn");
+    if (langBtn) langBtn.title = t("ui.changeLanguage");
+    const settingsBtn = dock.querySelector("#mist-settings-btn");
+    if (settingsBtn) settingsBtn.title = t("ui.settings");
+    const updateBtn = dock.querySelector("#mist-check-update");
+    if (updateBtn) updateBtn.title = t("ui.checkUpdates");
+    const refreshContextBtn = dock.querySelector("#mist-refresh-context");
+    if (refreshContextBtn) refreshContextBtn.title = t("ui.refreshContent");
+    if (agentsManageBtn) agentsManageBtn.title = t("ui.manageAgents");
+    const closeBtn = dock.querySelector("#mist-close-btn");
+    if (closeBtn) closeBtn.title = t("ui.close");
+    const statusBadge = dock.querySelector("#mist-status-badge");
+    if (statusBadge) statusBadge.title = t("ui.apiStatus");
+    const sendBtn = dock.querySelector("#mist-send-btn");
+    if (sendBtn) sendBtn.title = t("ui.send");
+    const integSendBtn = dock.querySelector("#mist-integration-send");
+    if (integSendBtn) integSendBtn.title = t("ui.send");
+    const integAddBtn = dock.querySelector("#mist-integration-add-btn");
+    if (integAddBtn) integAddBtn.title = t("ui.add");
+    
     // Context
     const contextTitle = dock.querySelector(".mist-context-title");
     if (contextTitle) contextTitle.textContent = t("context.title");
+    
+    // Onboarding
+    const onboardingFindKey = dock.querySelector("#mist-onboarding-find-key");
+    if (onboardingFindKey) onboardingFindKey.textContent = t("onboarding.findKey");
+    
+    // Model select
+    const modelLarge = dock.querySelector("#mist-model-large");
+    if (modelLarge) modelLarge.textContent = `Mistral Large (${t("model.recommended")})`;
     
     // Status
     updateStatusTranslation();
@@ -5154,20 +5451,20 @@ function initDockEvents(dock) {
       return;
     }
     onboardingSave.disabled = true;
-    onboardingSave.textContent = "Vérification...";
-    showOnboardingStatus("", "Test de la clé en cours...");
+    onboardingSave.textContent = t("chat.verifying");
+    showOnboardingStatus("", t("chat.testingKey"));
 
     const result = await testApiKey(key);
     if (result.valid) {
       await saveApiKey(key);
-      showOnboardingStatus("success", "✅ Clé valide ! Redirection...");
+      showOnboardingStatus("success", `✅ ${t("chat.keyValidRedirect")}`);
       updateStatus("connected");
       setTimeout(() => showMainContent(), 600);
     } else {
-      showOnboardingStatus("error", `❌ ${result.error || "Clé invalide. Vérifiez-la."}`);
+      showOnboardingStatus("error", `❌ ${result.error || t("chat.keyInvalidCheck")}`);
     }
     onboardingSave.disabled = false;
-    onboardingSave.textContent = "Enregistrer et tester";
+    onboardingSave.textContent = t("chat.saveAndTest");
   });
 
   // ─── ONGLETS ───
@@ -5498,7 +5795,7 @@ function initDockEvents(dock) {
     `).join('');
     
     // Ajouter le bouton "+ Ajouter"
-    html += `<div class="mist-btn mist-btn-add-agent" id="mist-btn-add-agent">➕ Ajouter</div>`;
+    html += `<div class="mist-btn mist-btn-add-agent" id="mist-btn-add-agent">${t("agents.add")}</div>`;
     
     settingsAgentsList.innerHTML = html;
 
@@ -5765,11 +6062,11 @@ function initDockEvents(dock) {
       if (response?.error) {
         addAgentMessage("agent", `❌ ${response.error}`);
       } else {
-        addAgentMessage("agent", response?.result || "Pas de réponse.");
+        addAgentMessage("agent", response?.result || t("chat.noResponse"));
       }
     } catch (err) {
       removeAgentTyping();
-      addAgentMessage("agent", `❌ Erreur : ${err.message}`);
+      addAgentMessage("agent", `❌ ${t("chat.error")}: ${err.message}`);
     }
   }
 
@@ -5831,7 +6128,7 @@ function initDockEvents(dock) {
     const docType = getGoogleDocType(currentUrl);
     if (docType && integrationUseCurrentBtn) {
       integrationUseCurrentBtn.classList.remove("mist-hidden");
-      integrationUseCurrentBtn.innerHTML = `📄 Ajouter cette page (${docType.label})`;
+      integrationUseCurrentBtn.innerHTML = `📄 ${t("integration.addCurrentPage")} (${docType.label})`;
     } else if (integrationUseCurrentBtn) {
       integrationUseCurrentBtn.classList.add("mist-hidden");
     }
@@ -5996,7 +6293,7 @@ function initDockEvents(dock) {
         const index = integrationDocs.findIndex(d => d.id === doc.id);
         if (index !== -1) {
           integrationDocs[index].status = "ready";
-          integrationDocs[index].content = "Contenu disponible via le lien du document.";
+          integrationDocs[index].content = t("integration.contentAvailable");
           await saveIntegrationDocs();
           renderIntegrationDocs();
         }
@@ -6091,11 +6388,11 @@ function initDockEvents(dock) {
           <div class="mist-integration-doc-title">${escapeHtml(doc.title)}</div>
           <div class="mist-integration-doc-type">${doc.label}</div>
         </div>
-        <span class="mist-integration-doc-status ${doc.status}" title="${hasContent ? 'Contenu disponible' : 'Ouvrir le document pour analyser'}">${hasContent ? '✅' : '⚠️'}</span>
+        <span class="mist-integration-doc-status ${doc.status}" title="${hasContent ? t("integration.contentAvailable") : t("integration.openDocToAnalyze")}">${hasContent ? '✅' : '⚠️'}</span>
         <div class="mist-integration-doc-actions">
-          <button class="mist-integration-doc-btn" data-refresh-doc="${doc.id}" title="Rafraîchir le contenu">🔄</button>
-          <button class="mist-integration-doc-btn" data-open-doc="${doc.id}" title="Ouvrir">🔗</button>
-          <button class="mist-integration-doc-btn delete" data-delete-doc="${doc.id}" title="Supprimer">🗑️</button>
+          <button class="mist-integration-doc-btn" data-refresh-doc="${doc.id}" title="${t("ui.refreshDocContent")}">🔄</button>
+          <button class="mist-integration-doc-btn" data-open-doc="${doc.id}" title="${t("ui.open")}">🔗</button>
+          <button class="mist-integration-doc-btn delete" data-delete-doc="${doc.id}" title="${t("ui.delete")}">🗑️</button>
         </div>
       </div>
     `;}).join("");
@@ -6139,7 +6436,7 @@ function initDockEvents(dock) {
         const docId = btn.dataset.refreshDoc;
         const doc = integrationDocs.find(d => d.id === docId);
         if (doc) {
-          showBannerMessage("🔄 Extraction du contenu en cours...");
+          showBannerMessage(`🔄 ${t("chat.extractingContent")}`);
           doc.status = "loading";
           renderIntegrationDocs();
           await extractDocContent(doc);
@@ -6149,7 +6446,7 @@ function initDockEvents(dock) {
           if (updatedDoc && updatedDoc.content && updatedDoc.content.length > 100 && !updatedDoc.content.includes("Document accessible via:")) {
             showBannerMessage("✅ Contenu extrait avec succès !");
           } else {
-            showBannerMessage("⚠️ Ouvre le document dans un onglet puis réessaie");
+            showBannerMessage(`⚠️ ${t("integration.openDocAndRetry")}`);
           }
         }
       });
@@ -6174,8 +6471,8 @@ function initDockEvents(dock) {
       const actionsDiv = document.createElement("div");
       actionsDiv.className = "mist-message-actions";
       actionsDiv.innerHTML = `
-        <button class="mist-message-action-btn" data-action="copy">📋 Copier</button>
-        <button class="mist-message-action-btn" data-action="regenerate">🔄 Régénérer</button>
+        <button class="mist-message-action-btn" data-action="copy">📋 ${t("chat.copy")}</button>
+        <button class="mist-message-action-btn" data-action="regenerate">🔄 ${t("chat.regenerate")}</button>
       `;
       messageEl.querySelector(".mist-message-bubble")?.after(actionsDiv);
       
@@ -6183,8 +6480,8 @@ function initDockEvents(dock) {
       actionsDiv.querySelector('[data-action="copy"]')?.addEventListener("click", (e) => {
         const btn = e.target;
         navigator.clipboard.writeText(content);
-        btn.textContent = "✅ Copié !";
-        setTimeout(() => btn.textContent = "📋 Copier", 1500);
+        btn.textContent = `✅ ${t("chat.copied")}`;
+        setTimeout(() => btn.textContent = `📋 ${t("chat.copy")}`, 1500);
       });
     }
     
@@ -6261,7 +6558,7 @@ function initDockEvents(dock) {
       if (response?.error) {
         addIntegrationMessage("assistant", `❌ ${response.error}`);
       } else {
-        addIntegrationMessage("assistant", response?.result || "Pas de réponse.");
+        addIntegrationMessage("assistant", response?.result || t("chat.noResponse"));
       }
     } catch (err) {
       dock.querySelector("#mist-integration-typing")?.remove();
@@ -6352,7 +6649,7 @@ function initDockEvents(dock) {
       if (response?.error) {
         addMessage("assistant", `❌ Erreur : ${response.error}`, null, true);
       } else {
-        addMessage("assistant", response?.result || "Pas de réponse.");
+        addMessage("assistant", response?.result || t("chat.noResponse"));
       }
     } catch (err) {
       removeTypingIndicator();
@@ -6363,7 +6660,7 @@ function initDockEvents(dock) {
   // ─── AGENT DE PAGE ───
   async function executePageAgent() {
     chatEmpty.classList.add("mist-hidden");
-    addMessage("assistant", "🤖 Agent de Page en action...\n\n_Analyse de la page et du comportement en cours..._", "🤖 Agent de Page");
+    addMessage("assistant", `🤖 ${t("action.pageagent.title")}...\n\n_${t("chat.pageAgentWorking")}_`, `🤖 ${t("action.pageagent.title")}`);
     showTypingIndicator();
 
     try {
@@ -6412,7 +6709,7 @@ function initDockEvents(dock) {
   // ─── SURLIGNER LES IDÉES CLÉS ───
   async function executeHighlightKeyIdeas() {
     chatEmpty.classList.add("mist-hidden");
-    addMessage("assistant", "🖍️ Analyse du contenu en cours...\n\n_Identification des idées clés, arguments et chiffres importants..._", "🖍️ Surligner les idées clés");
+    addMessage("assistant", `🖍️ ${t("chat.analyzing")}\n\n_${t("chat.highlightingIdeas")}_`, `🖍️ ${t("action.highlight.title")}`);
     showTypingIndicator();
 
     try {
@@ -6550,7 +6847,7 @@ function initDockEvents(dock) {
   // ─── EXTRAIRE LES DONNÉES ───
   async function executeExtractData() {
     chatEmpty.classList.add("mist-hidden");
-    addMessage("assistant", "📦 Extraction des données en cours...\n\n_Analyse des tableaux, listes et concepts clés..._", "📦 Extraire les données");
+    addMessage("assistant", `📦 ${t("chat.extractingData")}\n\n_${t("chat.analyzing")}_`, `📦 ${t("action.extract.title")}`);
     showTypingIndicator();
 
     try {
@@ -6731,7 +7028,7 @@ function initDockEvents(dock) {
   // ─── COMPARER DES PAGES ───
   async function executeComparePages() {
     chatEmpty.classList.add("mist-hidden");
-    addMessage("assistant", "⚖️ Préparation de la comparaison...\n\n_Récupération des onglets ouverts..._", "⚖️ Comparer des pages");
+    addMessage("assistant", `⚖️ ${t("chat.preparingComparison")}\n\n_${t("chat.retrievingTabs")}_`, `⚖️ ${t("action.compare.title")}`);
     showTypingIndicator();
 
     try {
@@ -6809,7 +7106,7 @@ function initDockEvents(dock) {
   }
 
   async function runComparison(tabIds) {
-    addMessage("assistant", "⚖️ Comparaison en cours...\n\n_Analyse et comparaison des contenus..._", "⚖️ Comparer des pages");
+    addMessage("assistant", `⚖️ ${t("chat.comparing")}\n\n_${t("chat.analyzing")}_`, `⚖️ ${t("action.compare.title")}`);
     showTypingIndicator();
 
     try {
@@ -6850,7 +7147,7 @@ function initDockEvents(dock) {
       return;
     }
 
-    addMessage("assistant", `🎬 Analyse de la vidéo en cours...\n\n_Extraction des informations..._`, actionLabels[actionMode]);
+    addMessage("assistant", `🎬 ${t("action.youtube.analyzing")}\n\n_${t("chat.extracting")}_`, actionLabels[actionMode]);
     showTypingIndicator();
 
     try {
@@ -6991,28 +7288,27 @@ function initDockEvents(dock) {
 
   async function executeQuickAction(actionType) {
     const actionLabels = {
-      summary: "📝 Résumé de la page",
-      detailed: "📚 Résumé détaillé",
-      simplify: "🎓 Vulgarisation",
-      translate: "🌍 Traduction",
-      critique: "🔍 Analyse complète",
-      plan: "📋 Plan de contenu",
-      pageAgent: "🤖 Agent de Page",
-      // Nouvelles actions
-      highlightKeyIdeas: "🖍️ Idées clés identifiées",
-      extractData: "📦 Données extraites",
-      comparePages: "⚖️ Comparaison de pages",
-      rewriteScientific: "🔬 Réécriture scientifique",
-      rewriteJournalistic: "📰 Réécriture journalistique",
-      rewriteMarketing: "🎯 Réécriture marketing",
-      rewriteUXCopy: "💻 Réécriture UX",
-      rewriteTwitterThread: "🐦 Thread Twitter",
-      rewriteLinkedIn: "💼 Post LinkedIn",
-      generateArticlePlan: "📝 Plan d'article",
-      generateYouTubePlan: "🎬 Plan YouTube",
-      generateEmailSequence: "📧 Séquence email",
-      generateTutorial: "📖 Tutoriel structuré",
-      generateContactEmail: "✉️ Prise de contact"
+      summary: t("actionLabel.summary"),
+      detailed: t("actionLabel.detailed"),
+      simplify: t("actionLabel.simplify"),
+      translate: t("actionLabel.translate"),
+      critique: t("actionLabel.critique"),
+      plan: t("actionLabel.plan"),
+      pageAgent: t("actionLabel.pageAgent"),
+      highlightKeyIdeas: t("actionLabel.highlightKeyIdeas"),
+      extractData: t("actionLabel.extractData"),
+      comparePages: t("actionLabel.comparePages"),
+      rewriteScientific: t("actionLabel.rewriteScientific"),
+      rewriteJournalistic: t("actionLabel.rewriteJournalistic"),
+      rewriteMarketing: t("actionLabel.rewriteMarketing"),
+      rewriteUXCopy: t("actionLabel.rewriteUXCopy"),
+      rewriteTwitterThread: t("actionLabel.rewriteTwitterThread"),
+      rewriteLinkedIn: t("actionLabel.rewriteLinkedIn"),
+      generateArticlePlan: t("actionLabel.generateArticlePlan"),
+      generateYouTubePlan: t("actionLabel.generateYouTubePlan"),
+      generateEmailSequence: t("actionLabel.generateEmailSequence"),
+      generateTutorial: t("actionLabel.generateTutorial"),
+      generateContactEmail: t("actionLabel.generateContactEmail")
     };
 
     chatEmpty.classList.add("mist-hidden");
@@ -7051,7 +7347,7 @@ function initDockEvents(dock) {
     
     // Message spécial pour l'analyse avec recherche
     if (actionType === "critique") {
-      addMessage("assistant", "🔍 Recherche d'informations complémentaires en cours...", actionLabels[actionType]);
+      addMessage("assistant", `🔍 ${t("chat.searching")}`, actionLabels[actionType]);
     } else {
       addMessage("assistant", "", actionLabels[actionType] || actionType);
     }
@@ -7145,7 +7441,7 @@ function initDockEvents(dock) {
 
       removeTypingIndicator();
       
-      let resultContent = response?.result || response?.error || "Pas de réponse.";
+      let resultContent = response?.result || response?.error || t("chat.noResponse");
       
       // Ajouter les sources si présentes
       if (response?.sources && response.sources.length > 0) {
@@ -7210,8 +7506,8 @@ function initDockEvents(dock) {
           <div class="mist-message-bubble">${contentHtml}</div>
           ${msg.role === "assistant" && msg.content ? `
             <div class="mist-message-actions">
-              <button class="mist-message-action-btn" data-action="copy">📋 Copier</button>
-              <button class="mist-message-action-btn" data-action="regenerate">🔄 Régénérer</button>
+              <button class="mist-message-action-btn" data-action="copy">📋 ${t("chat.copy")}</button>
+              <button class="mist-message-action-btn" data-action="regenerate">🔄 ${t("chat.regenerate")}</button>
             </div>
           ` : ""}
         </div>
@@ -7224,8 +7520,8 @@ function initDockEvents(dock) {
         btn.addEventListener("click", () => {
           if (btn.dataset.action === "copy") {
             navigator.clipboard.writeText(msg.content);
-            btn.textContent = "✅ Copié !";
-            setTimeout(() => btn.textContent = "📋 Copier", 1500);
+            btn.textContent = `✅ ${t("chat.copied")}`;
+            setTimeout(() => btn.textContent = `📋 ${t("chat.copy")}`, 1500);
           }
         });
       });
@@ -7260,6 +7556,15 @@ function initDockEvents(dock) {
 
   function formatMessageContent(content) {
     if (!content) return "";
+    
+    // Nettoyer les artefacts HTML mal formatés générés par l'IA
+    // Pattern: (url" target="blank" class="mist-link">texte) -> [texte](url)
+    content = content.replace(/\(([^"]+)"\s*target="[^"]*"\s*class="[^"]*">([^<]+)\)/g, '[$2]($1)');
+    // Pattern: <a href="url" ...>texte</a> mal formaté
+    content = content.replace(/<a\s+href="([^"]+)"[^>]*>([^<]+)<\/a>/gi, '[$2]($1)');
+    // Supprimer les attributs HTML orphelins
+    content = content.replace(/"\s*target="[^"]*"\s*class="[^"]*">/g, '');
+    content = content.replace(/target="[^"]*"\s*class="[^"]*">/g, '');
     
     // Fonction pour parser les tableaux Markdown
     function parseMarkdownTables(text) {
@@ -7460,7 +7765,7 @@ async function saveApiKey(key) {
 async function testApiKey(key) {
   return new Promise(resolve => {
     chrome.runtime.sendMessage({ type: "testApiKey", apiKey: key }, (response) => {
-      resolve(response || { valid: false, error: "Pas de réponse" });
+      resolve(response || { valid: false, error: t("chat.noResponse") });
     });
   });
 }
