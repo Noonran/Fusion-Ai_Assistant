@@ -12,6 +12,7 @@
   <img src="https://img.shields.io/badge/Manifest-V3-blue" alt="Manifest V3">
   <img src="https://img.shields.io/badge/Chrome-Extension-green" alt="Chrome Extension">
   <img src="https://img.shields.io/badge/Edge-Extension-blue" alt="Edge Extension">
+  <img src="https://img.shields.io/badge/Brave-Compatible-orange" alt="Brave Compatible">
   <img src="https://img.shields.io/badge/Powered%20by-Mistral%20AI-orange" alt="Powered by Mistral AI">
   <img src="https://img.shields.io/badge/Developed%20by-Fusion%20AI-red" alt="Developed by Fusion AI">
 </p>
@@ -20,7 +21,7 @@
 
 ## 📖 Description
 
-**Fusion Browse Assistant** is a Chrome/Edge extension that integrates an AI assistant directly into your browser. Powered by the Mistral API, it allows you to summarize, analyze, question, and transform the content of any web page.
+**Fusion Browse Assistant** is a Chrome/Edge/Brave extension that integrates an AI assistant directly into your browser. Powered by the Mistral API, it allows you to summarize, analyze, question, and transform the content of any web page.
 
 > 🔒 **100% Private**: Your API key is stored locally on your browser. No data is sent to third-party servers.
 
@@ -33,7 +34,13 @@
 - **🔍 Automatic web search**: If the information isn't on the page, the assistant automatically searches the internet
 - Get contextualized and sourced answers
 - Persistent conversation history
-- Powered by **Mistral Large** for high-quality responses
+- **Choose your AI model**: Mistral Large, Medium, Small, Nemo, or Codestral
+
+### ⚙️ Settings Panel
+- 🌍 **Language selector**: French, English, German, Spanish
+- 🤖 **AI Model selector**: Choose the model that fits your needs
+- 🔑 **API Key management**: Save, test, delete
+- 🔄 **Update checker**: Automatic notification when a new version is available
 
 ### ⚡ Quick Actions
 
@@ -96,6 +103,18 @@ Automatic language detection based on browser settings.
 
 ---
 
+## 🌐 Browser Compatibility
+
+| Browser | Compatible | Notes |
+|---------|------------|-------|
+| ✅ **Google Chrome** | Yes | Native support |
+| ✅ **Microsoft Edge** | Yes | Chromium-based |
+| ✅ **Brave** | Yes | Chromium-based |
+| ✅ **Opera** | Yes | Chromium-based |
+| ✅ **Vivaldi** | Yes | Chromium-based |
+
+---
+
 ## 🎨 Interface
 
 The extension features an elegant side panel inspired by Mistral design:
@@ -109,16 +128,17 @@ The extension features an elegant side panel inspired by Mistral design:
 
 ## 📦 Installation
 
-### Developer Mode (Chrome/Edge)
+### Developer Mode (Chrome/Edge/Brave)
 
 1. **Download** or clone this repository
    ```bash
-   git clone https://github.com/Noonran/extension-mistral.git
+   git clone https://github.com/Noonran/Fusion-Ai_Assistant.git
    ```
 
 2. **Open** the extensions page
    - Chrome: `chrome://extensions`
    - Edge: `edge://extensions`
+   - Brave: `brave://extensions`
 
 3. **Enable** developer mode (toggle in top right)
 
@@ -137,17 +157,20 @@ The extension features an elegant side panel inspired by Mistral design:
 3. Open the extension and click ⚙️ (Settings)
 4. Paste your key and click "Save"
 5. Test the connection with the "Test" button
+6. **Choose your preferred AI model**
 
 ---
 
 ## 📁 Project Structure
 
 ```
-extension-mistral/
+Fusion-Ai_Assistant/
 ├── manifest.json        # Manifest V3 configuration
 ├── background.js        # Service Worker (API, business logic)
 ├── contentScript.js     # Injected user interface
 ├── popup.html/js/css    # Extension popup
+├── CONTRIBUTING.md      # Contribution guidelines
+├── LICENSE              # AGPL-3.0 License
 └── images/              # Visual resources
     ├── fusionai.png     # Fusion AI logo (app)
     ├── mistral.png      # Mistral logo (chat)
@@ -170,7 +193,7 @@ extension-mistral/
 
 | Permission | Usage |
 |------------|-------|
-| `storage` | Local storage of API key and preferences |
+| `storage` | Local storage of API key, model, and preferences |
 | `activeTab` | Access to active tab content |
 | `scripting` | Side panel injection |
 | `contextMenus` | Right-click menu for quick actions |
@@ -180,17 +203,17 @@ extension-mistral/
 ## 🚀 Roadmap
 
 - [ ] Automatic light/dark mode
-- [ ] Conversation export
+- [ ] Conversation save & export
 - [ ] Customizable keyboard shortcuts
-- [ ] Support for other AI models
 - [ ] Multi-device synchronization
 - [ ] Page Agent (interactive page analysis)
+- [ ] Firefox compatibility
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Feel free to:
+Contributions are welcome! See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 1. Fork the project
 2. Create a branch (`git checkout -b feature/new-feature`)
@@ -202,7 +225,7 @@ Contributions are welcome! Feel free to:
 
 ## 📄 License
 
-This project is open-source under the **[AGPL-3.0](LICENSE)** license.
+This project is open-source under the **[AGPL-3.0](License/LICENSE)** license.
 
 - ✅ Any use, redistribution, or integration must comply with AGPL-3.0
 - ✅ Modifications must be published under the same license
@@ -215,9 +238,9 @@ Companies can obtain:
 - A commercial product integration license
 - Professional support and premium features
 
-➡️ **Commercial contact**: contact@fusion-ai.dev
+➡️ **Commercial contact**: vincent.manrique@fusion-ai.tech
 
-See [LICENSE_COMMERCIAL.md](LICENSE_COMMERCIAL.md) for more details.
+See [LICENSE_COMMERCIAL.md](License/LICENSE_COMMERCIAL.md) for more details.
 
 ---
 
@@ -229,6 +252,10 @@ See [LICENSE_COMMERCIAL.md](LICENSE_COMMERCIAL.md) for more details.
 
 <p align="center">
   <em>Creating innovative AI tools to boost your productivity</em>
+</p>
+
+<p align="center">
+  📧 <a href="mailto:vincent.manrique@fusion-ai.tech">vincent.manrique@fusion-ai.tech</a>
 </p>
 
 ---
