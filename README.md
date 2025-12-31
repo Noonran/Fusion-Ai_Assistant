@@ -240,7 +240,7 @@ Companies can obtain:
 
 ➡️ **Commercial contact**: vincent.manrique@fusion-ai.tech
 
-See [LICENSE_COMMERCIAL.md](License/LICENSE_COMMERCIAL.md) for more details.
+Ask the LICENSE COMMERCIAL for more details.
 
 ---
 
