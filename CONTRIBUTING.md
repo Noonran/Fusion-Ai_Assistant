@@ -1,107 +1,106 @@
-# 🤝 Contribuer à Fusion Browse Assistant
+# 🤝 Contributing to Fusion Browse Assistant
 
-Merci de votre intérêt pour contribuer à ce projet !
-
----
-
-## 📋 Principes
-
-- ✅ Tout code contribué doit être publié sous **AGPL-3.0**
-- ✅ Pas de code provenant de sources non libres ou non compatibles
-- ✅ Les contributions doivent respecter la structure et le style du projet
-- ✅ Les commits doivent être clairs et descriptifs
+Thank you for your interest in contributing to this project!
 
 ---
 
-## 🚀 Comment contribuer
+## 📋 Principles
 
-### 1. Fork le repository
+- ✅ All contributed code must be published under **AGPL-3.0**
+- ✅ No code from non-free or incompatible sources
+- ✅ Contributions must respect the project's structure and style
+- ✅ Commits must be clear and descriptive
+
+---
+
+## 🚀 How to Contribute
+
+### 1. Fork the repository
 
 ```bash
-git clone https://github.com/Noonran/extension-mistral.git
-cd extension-mistral
+git clone https://github.com/Noonran/Fusion-Ai_Assistant.git
+cd Fusion-Ai_Assistant
 ```
 
-### 2. Créer une branche
+### 2. Create a branch
 
 ```bash
-git checkout -b feature/ma-nouvelle-fonctionnalite
+git checkout -b feature/my-new-feature
 ```
 
-### 3. Développer et tester
+### 3. Develop and test
 
-- Testez votre code sur Chrome et Edge
-- Vérifiez que l'extension fonctionne correctement
-- Suivez les conventions de code existantes
+- Test your code on Chrome and Edge
+- Verify that the extension works correctly
+- Follow existing code conventions
 
-### 4. Commit vos changements
+### 4. Commit your changes
 
 ```bash
 git add .
-git commit -m "feat: description claire de la fonctionnalité"
+git commit -m "feat: clear description of the feature"
 ```
 
-### 5. Push et Pull Request
+### 5. Push and Pull Request
 
 ```bash
-git push origin feature/ma-nouvelle-fonctionnalite
+git push origin feature/my-new-feature
 ```
 
-Puis ouvrez une **Pull Request** sur GitHub avec une description détaillée.
+Then open a **Pull Request** on GitHub with a detailed description.
 
 ---
 
-## 📝 Convention de commits
+## 📝 Commit Convention
 
-Utilisez le format suivant pour vos messages de commit :
+Use the following format for your commit messages:
 
-| Préfixe | Description |
-|---------|-------------|
-| `feat:` | Nouvelle fonctionnalité |
-| `fix:` | Correction de bug |
+| Prefix | Description |
+|--------|-------------|
+| `feat:` | New feature |
+| `fix:` | Bug fix |
 | `docs:` | Documentation |
-| `style:` | Formatage, pas de changement de code |
-| `refactor:` | Refactoring du code |
-| `test:` | Ajout de tests |
+| `style:` | Formatting, no code change |
+| `refactor:` | Code refactoring |
+| `test:` | Adding tests |
 | `chore:` | Maintenance |
 
 ---
 
-## 🐛 Signaler un bug
+## 🐛 Reporting a Bug
 
-1. Vérifiez que le bug n'a pas déjà été signalé
-2. Ouvrez une **Issue** avec :
-   - Description claire du problème
-   - Étapes pour reproduire
-   - Comportement attendu vs réel
-   - Screenshots si pertinent
-   - Version du navigateur
-
----
-
-## 💡 Proposer une fonctionnalité
-
-Ouvrez une **Issue** avec le tag `enhancement` et décrivez :
-
-- Le problème que ça résout
-- La solution proposée
-- Des alternatives considérées
+1. Check that the bug hasn't already been reported
+2. Open an **Issue** with:
+   - Clear description of the problem
+   - Steps to reproduce
+   - Expected vs actual behavior
+   - Screenshots if relevant
+   - Browser version
 
 ---
 
-## 📖 Code de conduite
+## 💡 Proposing a Feature
 
-- Soyez respectueux et inclusif
-- Acceptez les critiques constructives
-- Concentrez-vous sur ce qui est le mieux pour la communauté
+Open an **Issue** with the `enhancement` tag and describe:
 
----
-
-## 📧 Questions ?
-
-Contactez-nous : **contact@fusion-ai.dev**
+- The problem it solves
+- The proposed solution
+- Alternatives considered
 
 ---
 
-*Merci de contribuer à Fusion Browse Assistant ! 🚀*
+## 📖 Code of Conduct
 
+- Be respectful and inclusive
+- Accept constructive criticism
+- Focus on what's best for the community
+
+---
+
+## 📧 Questions?
+
+Contact us: **vincent.manrique@fusion-ai.tech**
+
+---
+
+*Thank you for contributing to Fusion Browse Assistant! 🚀*

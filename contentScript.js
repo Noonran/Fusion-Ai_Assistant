@@ -282,6 +282,8 @@ const TRANSLATIONS = {
     // Settings
     "settings.title": "Configuration Mistral",
     "settings.language": "🌍 Langue de l'extension",
+    "settings.model": "🤖 Modèle IA",
+    "settings.modelSaved": "Modèle enregistré !",
     "settings.apiKey": "🔑 Clé API Mistral",
     "settings.save": "Enregistrer",
     "settings.test": "Tester",
@@ -293,6 +295,9 @@ const TRANSLATIONS = {
     "settings.cancel": "Annuler",
     "settings.findKey": "🔑 Où trouver ma clé API ?",
     "settings.createAgent": "🤖 Créer un agent",
+    "settings.checkUpdate": "🔄 Vérifier les mises à jour",
+    "settings.updateAvailable": "✨ Nouvelle version disponible !",
+    "settings.upToDate": "✅ À jour",
     "settings.keySaved": "Clé enregistrée !",
     "settings.keyValid": "✅ Clé valide !",
     "settings.keyInvalid": "❌ Clé invalide",
@@ -462,6 +467,8 @@ const TRANSLATIONS = {
     // Settings
     "settings.title": "Mistral Configuration",
     "settings.language": "🌍 Extension Language",
+    "settings.model": "🤖 AI Model",
+    "settings.modelSaved": "Model saved!",
     "settings.apiKey": "🔑 Mistral API Key",
     "settings.save": "Save",
     "settings.test": "Test",
@@ -473,6 +480,9 @@ const TRANSLATIONS = {
     "settings.cancel": "Cancel",
     "settings.findKey": "🔑 Where to find my API key?",
     "settings.createAgent": "🤖 Create an agent",
+    "settings.checkUpdate": "🔄 Check for updates",
+    "settings.updateAvailable": "✨ New version available!",
+    "settings.upToDate": "✅ Up to date",
     "settings.keySaved": "Key saved!",
     "settings.keyValid": "✅ Valid key!",
     "settings.keyInvalid": "❌ Invalid key",
@@ -642,6 +652,8 @@ const TRANSLATIONS = {
     // Settings
     "settings.title": "Mistral Konfiguration",
     "settings.language": "🌍 Sprache der Erweiterung",
+    "settings.model": "🤖 KI-Modell",
+    "settings.modelSaved": "Modell gespeichert!",
     "settings.apiKey": "🔑 Mistral API-Schlüssel",
     "settings.save": "Speichern",
     "settings.test": "Testen",
@@ -653,6 +665,9 @@ const TRANSLATIONS = {
     "settings.cancel": "Abbrechen",
     "settings.findKey": "🔑 Wo finde ich meinen API-Schlüssel?",
     "settings.createAgent": "🤖 Agent erstellen",
+    "settings.checkUpdate": "🔄 Nach Updates suchen",
+    "settings.updateAvailable": "✨ Neue Version verfügbar!",
+    "settings.upToDate": "✅ Aktuell",
     "settings.keySaved": "Schlüssel gespeichert!",
     "settings.keyValid": "✅ Gültiger Schlüssel!",
     "settings.keyInvalid": "❌ Ungültiger Schlüssel",
@@ -822,6 +837,8 @@ const TRANSLATIONS = {
     // Settings
     "settings.title": "Configuración Mistral",
     "settings.language": "🌍 Idioma de la extensión",
+    "settings.model": "🤖 Modelo IA",
+    "settings.modelSaved": "¡Modelo guardado!",
     "settings.apiKey": "🔑 Clave API Mistral",
     "settings.save": "Guardar",
     "settings.test": "Probar",
@@ -833,6 +850,9 @@ const TRANSLATIONS = {
     "settings.cancel": "Cancelar",
     "settings.findKey": "🔑 ¿Dónde encontrar mi clave API?",
     "settings.createAgent": "🤖 Crear un agente",
+    "settings.checkUpdate": "🔄 Buscar actualizaciones",
+    "settings.updateAvailable": "✨ ¡Nueva versión disponible!",
+    "settings.upToDate": "✅ Actualizado",
     "settings.keySaved": "¡Clave guardada!",
     "settings.keyValid": "✅ ¡Clave válida!",
     "settings.keyInvalid": "❌ Clave inválida",
@@ -1728,18 +1748,28 @@ function injectDockStyles() {
     }
 
     .mist-input-select {
-      cursor: pointer;
-      appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 12px center;
-      padding-right: 36px;
+      cursor: pointer !important;
+      appearance: none !important;
+      -webkit-appearance: none !important;
+      -moz-appearance: none !important;
+      background-color: var(--mist-bg-input) !important;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E") !important;
+      background-repeat: no-repeat !important;
+      background-position: right 12px center !important;
+      padding-right: 36px !important;
+      color: var(--mist-text) !important;
+      border: 1px solid var(--mist-border) !important;
+    }
+
+    .mist-input-select:focus {
+      border-color: var(--mist-orange) !important;
+      box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.2) !important;
     }
 
     .mist-input-select option {
-      background: var(--mist-bg-panel);
-      color: var(--mist-text);
-      padding: 8px;
+      background: var(--mist-bg-panel) !important;
+      color: var(--mist-text) !important;
+      padding: 8px !important;
     }
 
     .mist-btn {
@@ -1859,6 +1889,54 @@ function injectDockStyles() {
     .mist-settings-help-separator {
       color: var(--mist-text-dim);
       margin: 0 8px;
+    }
+
+    /* Bouton de mise à jour */
+    .mist-update-btn {
+      all: unset !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: pointer !important;
+      padding: 4px 8px !important;
+      border-radius: 6px !important;
+      transition: all 0.2s ease !important;
+      font-size: 14px !important;
+    }
+
+    .mist-update-btn:hover {
+      background: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .mist-update-icon {
+      display: inline-block !important;
+    }
+
+    /* État: vérification en cours */
+    .mist-update-checking {
+      filter: grayscale(100%) opacity(0.5) !important;
+      animation: mist-spin 1s linear infinite !important;
+    }
+
+    /* État: pas de mise à jour (grisé) */
+    .mist-update-none {
+      filter: grayscale(100%) opacity(0.5) !important;
+    }
+
+    /* État: mise à jour disponible (coloré avec animation) */
+    .mist-update-available {
+      filter: none !important;
+      animation: mist-pulse 1.5s ease-in-out infinite !important;
+    }
+
+    @keyframes mist-spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes mist-pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
     }
 
     /* Section Agents dans Settings */
@@ -4175,6 +4253,20 @@ function buildDock() {
           </div>
         </div>
 
+        <div class="mist-field">
+          <label class="mist-field-label" data-i18n="settings.model">🤖 Modèle IA</label>
+          <div class="mist-field-row">
+            <select class="mist-input mist-input-select" id="mist-model-select">
+              <option value="mistral-large-latest">Mistral Large (Recommandé)</option>
+              <option value="mistral-medium-latest">Mistral Medium</option>
+              <option value="mistral-small-latest">Mistral Small (Rapide)</option>
+              <option value="open-mistral-nemo">Mistral Nemo (Open)</option>
+              <option value="codestral-latest">Codestral (Code)</option>
+            </select>
+            <button class="mist-btn mist-btn-primary" id="mist-save-model" data-i18n="settings.save">Enregistrer</button>
+          </div>
+        </div>
+
         <div class="mist-settings-divider"></div>
 
         <div class="mist-field">
@@ -4221,6 +4313,10 @@ function buildDock() {
           <a href="https://console.mistral.ai/build/agents" target="_blank" class="mist-settings-help-link">
             🤖 Créer un agent
           </a>
+          <span class="mist-settings-help-separator">•</span>
+          <button class="mist-update-btn" id="mist-check-update" title="Vérifier les mises à jour">
+            <span class="mist-update-icon mist-update-checking">🔄</span>
+          </button>
         </div>
       </div>
     </div>
@@ -4730,6 +4826,8 @@ function initDockEvents(dock) {
   // ─── SETTINGS ───
   const languageSelect = dock.querySelector("#mist-language-select");
   const saveLangBtn = dock.querySelector("#mist-save-lang");
+  const modelSelect = dock.querySelector("#mist-model-select");
+  const saveModelBtn = dock.querySelector("#mist-save-model");
   
   // Fonction pour appliquer les traductions à l'interface
   function applyTranslations() {
@@ -4759,6 +4857,7 @@ function initDockEvents(dock) {
     
     // Settings buttons
     if (saveLangBtn) saveLangBtn.textContent = t("settings.save");
+    if (saveModelBtn) saveModelBtn.textContent = t("settings.save");
     const saveKeyBtn = dock.querySelector("#mist-save-key");
     if (saveKeyBtn) saveKeyBtn.textContent = t("settings.save");
     const testKeyBtn = dock.querySelector("#mist-test-key");
@@ -4935,6 +5034,36 @@ function initDockEvents(dock) {
     
     showSettingsMessage("success", t("settings.langSaved"));
   });
+
+  // Sauvegarder le modèle
+  saveModelBtn?.addEventListener("click", async () => {
+    const model = modelSelect.value;
+    await saveModel(model);
+    showSettingsMessage("success", t("settings.modelSaved"));
+  });
+
+  // Fonctions pour gérer le modèle
+  async function saveModel(model) {
+    return new Promise(resolve => {
+      chrome.storage.local.set({ mistralModel: model }, resolve);
+    });
+  }
+
+  async function getStoredModel() {
+    return new Promise(resolve => {
+      chrome.storage.local.get(["mistralModel"], (result) => {
+        resolve(result.mistralModel || "mistral-large-latest");
+      });
+    });
+  }
+
+  // Charger le modèle stocké au démarrage
+  async function loadStoredModel() {
+    const model = await getStoredModel();
+    if (modelSelect) {
+      modelSelect.value = model;
+    }
+  }
   
   settingsBtn.addEventListener("click", async () => {
     settingsOverlay.classList.add("open");
@@ -5002,6 +5131,20 @@ function initDockEvents(dock) {
       showOnboarding();
     }
   });
+
+  // ─── UPDATE CHECK ───
+  const checkUpdateBtn = dock.querySelector("#mist-check-update");
+  if (checkUpdateBtn) {
+    checkUpdateBtn.addEventListener("click", () => {
+      if (updateAvailable) {
+        window.open(GITHUB_REPO_URL, "_blank");
+      } else {
+        checkForUpdates();
+      }
+    });
+    // Vérifier les mises à jour au chargement
+    setTimeout(() => checkForUpdates(), 2000);
+  }
 
   // ─── ONBOARDING ───
   onboardingSave.addEventListener("click", async () => {
@@ -5173,6 +5316,9 @@ function initDockEvents(dock) {
     if (langSelect && lang) {
       langSelect.value = lang;
     }
+    
+    // Charger le modèle
+    await loadStoredModel();
   }
 
   // Detect browser language
@@ -5184,6 +5330,72 @@ function initDockEvents(dock) {
       return langCode;
     }
     return "en";
+  }
+
+  // ─── UPDATE CHECK ───
+  const CURRENT_VERSION = "1.0.0";
+  const GITHUB_MANIFEST_URL = "https://raw.githubusercontent.com/Noonran/Fusion-Ai_Assistant/main/manifest.json";
+  const GITHUB_REPO_URL = "https://github.com/Noonran/Fusion-Ai_Assistant";
+
+  let updateAvailable = false;
+  let latestVersion = null;
+
+  async function checkForUpdates() {
+    const updateBtn = dock.querySelector("#mist-check-update");
+    const updateIcon = updateBtn?.querySelector(".mist-update-icon");
+    
+    if (!updateIcon) return;
+    
+    // État: vérification en cours
+    updateIcon.className = "mist-update-icon mist-update-checking";
+    updateIcon.textContent = "🔄";
+    
+    try {
+      const response = await fetch(GITHUB_MANIFEST_URL, {
+        cache: "no-store",
+        headers: { "Accept": "application/json" }
+      });
+      
+      if (!response.ok) {
+        throw new Error("Failed to fetch manifest");
+      }
+      
+      const manifest = await response.json();
+      latestVersion = manifest.version;
+      
+      // Comparer les versions
+      if (compareVersions(latestVersion, CURRENT_VERSION) > 0) {
+        updateAvailable = true;
+        updateIcon.className = "mist-update-icon mist-update-available";
+        updateIcon.textContent = "✨";
+        updateBtn.title = t("settings.updateAvailable") + ` (v${latestVersion})`;
+      } else {
+        updateAvailable = false;
+        updateIcon.className = "mist-update-icon mist-update-none";
+        updateIcon.textContent = "✅";
+        updateBtn.title = t("settings.upToDate") + ` (v${CURRENT_VERSION})`;
+      }
+    } catch (error) {
+      console.log("Update check failed:", error);
+      // En cas d'erreur, afficher grisé
+      updateIcon.className = "mist-update-icon mist-update-none";
+      updateIcon.textContent = "🔄";
+      updateBtn.title = t("settings.checkUpdate");
+    }
+  }
+
+  // Compare deux versions (retourne 1 si v1 > v2, -1 si v1 < v2, 0 si égales)
+  function compareVersions(v1, v2) {
+    const parts1 = v1.split(".").map(Number);
+    const parts2 = v2.split(".").map(Number);
+    
+    for (let i = 0; i < Math.max(parts1.length, parts2.length); i++) {
+      const p1 = parts1[i] || 0;
+      const p2 = parts2[i] || 0;
+      if (p1 > p2) return 1;
+      if (p1 < p2) return -1;
+    }
+    return 0;
   }
 
   async function getStoredLanguage() {

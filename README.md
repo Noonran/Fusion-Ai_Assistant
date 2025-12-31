@@ -215,7 +215,7 @@ Companies can obtain:
 - A commercial product integration license
 - Professional support and premium features
 
-➡️ **Commercial contact**: vincent.manrique@fusion-ai.tech
+➡️ **Commercial contact**: contact@fusion-ai.dev
 
 See [LICENSE_COMMERCIAL.md](LICENSE_COMMERCIAL.md) for more details.
 

@@ -10,8 +10,17 @@
 const CONTEXT_MAX_CHARS = 15000;
 const API_BASE_URL = "https://api.mistral.ai/v1/chat/completions";
 const MISTRAL_API_URL = API_BASE_URL; // Alias pour compatibilité
-const DEFAULT_MODEL = "mistral-large-latest"; // Modèle plus performant pour le chat
+const DEFAULT_MODEL = "mistral-large-latest"; // Modèle par défaut
 const AUTO_WEB_SEARCH = true; // Recherche web automatique si l'info n'est pas dans le contexte
+
+// Fonction pour récupérer le modèle stocké par l'utilisateur
+async function getStoredModel() {
+  return new Promise(resolve => {
+    chrome.storage.local.get(["mistralModel"], (result) => {
+      resolve(result.mistralModel || DEFAULT_MODEL);
+    });
+  });
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // PROMPTS SYSTÈME
@@ -1067,9 +1076,12 @@ async function runMistralCall({ apiKey, mode, context, userQuestion, searchResul
   const basePrompt = SYSTEM_PROMPTS[mode] || SYSTEM_PROMPTS.ask;
   const systemPrompt = `${langInstruction}\n\n${basePrompt}`;
   const userPrompt = buildUserPrompt(mode, context, userQuestion, searchResults);
+  
+  // Utiliser le modèle stocké ou l'agent spécifié
+  const userModel = await getStoredModel();
 
   const payload = {
-    model: agentId || DEFAULT_MODEL,
+    model: agentId || userModel,
     messages: [
       { role: "system", content: systemPrompt },
       { role: "user", content: userPrompt }
@@ -1370,12 +1382,13 @@ async function handlePageAgent(message, sender, sendResponse) {
 async function runPageAgentCall(apiKey, snapshots) {
   const language = await getStoredLanguage();
   const langInstruction = getLanguageInstruction(language);
+  const userModel = await getStoredModel();
   
   // Construire le prompt utilisateur avec les snapshots
   const userPrompt = buildPageAgentPrompt(snapshots);
 
   const payload = {
-    model: DEFAULT_MODEL,
+    model: userModel,
     messages: [
       { 
         role: "system", 
@@ -1501,9 +1514,10 @@ async function handleComparePages(tabIds, sendResponse) {
 
     const systemPrompt = `${langInstruction}\n\n${SYSTEM_PROMPTS.comparePages}`;
     const userPrompt = `Compare ces ${pagesContent.length} pages et génère un tableau comparatif détaillé:\n${pagesPrompt}`;
+    const userModel = await getStoredModel();
 
     const payload = {
-      model: DEFAULT_MODEL,
+      model: userModel,
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt }
@@ -1780,9 +1794,11 @@ En attendant, comment puis-je t'aider ?`;
 
     // Ajouter la question
     messages.push({ role: "user", content: question });
+    
+    const userModel = await getStoredModel();
 
     const payload = {
-      model: DEFAULT_MODEL,
+      model: userModel,
       messages,
       max_tokens: 4000,
       temperature: 0.7
@@ -2144,8 +2160,10 @@ N'indique PAS que c'est une reconstitution dans le texte lui-même.`;
       keyPoints: 6000
     };
     
+    const userModel = await getStoredModel();
+    
     const payload = {
-      model: DEFAULT_MODEL,
+      model: userModel,
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt }

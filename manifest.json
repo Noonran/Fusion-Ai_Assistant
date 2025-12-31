@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Fusion Browse Assistant",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Assistant IA privé pour résumer, questionner et explorer les pages web avec votre clé Mistral. Développé par Fusion AI.",
   "author": "Fusion AI",
   "homepage_url": "https://github.com/Noonran/extension-mistral",
